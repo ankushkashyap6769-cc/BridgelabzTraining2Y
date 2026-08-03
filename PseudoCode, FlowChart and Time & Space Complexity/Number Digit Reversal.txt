@@ -1,0 +1,24 @@
+PROGRAM ReverseInteger(N)
+    INPUT: Integer N
+    OUTPUT: Integer with digits reversed
+
+    SET is_negative = FALSE
+    IF N < 0 {
+        SET is_negative = TRUE
+        SET N = -N
+    }
+
+    SET reversed_N = 0
+
+    WHILE N > 0 {
+        SET remainder = N MOD 10
+        SET reversed_N = (reversed_N * 10) + remainder
+        SET N = N DIV 10
+    }
+
+    IF is_negative {
+        SET reversed_N = -reversed_N
+    }
+
+    RETURN reversed_N
+END PROGRAM

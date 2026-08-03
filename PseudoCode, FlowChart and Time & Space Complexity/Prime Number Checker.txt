@@ -1,0 +1,25 @@
+PROGRAM CheckPrime(N)
+    INPUT: Positive integer N > 1
+    OUTPUT: "Prime" or "Not Prime"
+    IF N <= 1 {
+        RETURN "Not Prime"
+		}
+		
+    IF N == 2 {
+        RETURN "Prime"
+		}
+		
+    IF N MOD 2 == 0 {
+        RETURN "Not Prime"
+		}
+
+    SET i = 3
+    WHILE i * i <= N {
+        IF N MOD i == 0 THEN
+            RETURN "Not Prime"
+        END IF
+        SET i = i + 2
+    }
+
+    RETURN "Prime"
+END PROGRAM
